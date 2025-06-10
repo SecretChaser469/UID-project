@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolkata Itinerary - AI Travel Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/city-itinerary.css">
+    <style>
+        /* Ensure basic styling if external CSS fails to load */
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+        .navbar { background: white; padding: 1rem; }
+        .city-header { min-height: 400px; }
+    </style>
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <main>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-rocket"></i>
+            <span>AI Travel Planner</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="itineraries.html">Itineraries</a>
+            <a href="dashboard.html" id="dashboardLink" style="display: none;">Dashboard</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn btn-outline">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </nav>
+    <header class="city-header" style="background-image: url('https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=1920&q=80')">
+        <div class="city-header-content">
+            <h1>Kolkata</h1>
+            <p>Experience the cultural capital of India - The City of Joy</p>
+        </div>
+    </header>
+    <section class="city-overview">
+        <div class="overview-container">
+            <div class="overview-card">
+                <i class="fas fa-clock"></i>
+                <h3>Duration</h3>
+                <p>3 Days</p>
+            </div>
+            <div class="overview-card">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Budget</h3>
+                <p>₹15,000</p>
+            </div>
+            <div class="overview-card">
+                <i class="fas fa-calendar"></i>
+                <h3>Best Time to Visit</h3>
+                <p>October to March</p>
+            </div>
+            <div class="weather-widget">
+                <i class="fas fa-cloud weather-icon"></i>
+                <div class="temperature">30°C</div>
+                <div class="weather-details">Humid, Humidity: 80%</div>
+            </div>
+        </div>
+    </section>
+    <section class="featured-image">
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1536421469767-80559bb6f5e1?auto=format&fit=crop&w=1200&q=80" alt="Victoria Memorial - Kolkata's architectural marvel" class="main-image">
+            <p class="image-caption">The magnificent Victoria Memorial, a symbol of Kolkata's colonial heritage</p>
+        </div>
+    </section>
+    <main class="itinerary-content">
+        <div class="day-section">
+            <div class="day-header">
+                <h2>Day 1 - Colonial Heritage</h2>
+            </div>
+            <div class="activity-list">
+                <div class="activity">
+                    <div class="activity-time">09:00 AM</div>
+                    <div class="activity-details">
+                        <h3>Victoria Memorial</h3>
+                        <p>Start your day at this magnificent marble building, a symbol of British Raj architecture.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">11:30 AM</div>
+                    <div class="activity-details">
+                        <h3>St. Paul's Cathedral</h3>
+                        <p>Visit this beautiful Gothic-style cathedral near Victoria Memorial.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">02:00 PM</div>
+                    <div class="activity-details">
+                        <h3>Indian Museum</h3>
+                        <p>Explore the oldest and largest museum in India.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">05:00 PM</div>
+                    <div class="activity-details">
+                        <h3>Park Street</h3>
+                        <p>Evening walk and dinner at Kolkata's famous food street.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="day-section">
+            <div class="day-header">
+                <h2>Day 2 - Cultural Exploration</h2>
+            </div>
+            <div class="activity-list">
+                <div class="activity">
+                    <div class="activity-time">08:00 AM</div>
+                    <div class="activity-details">
+                        <h3>Dakshineswar Temple</h3>
+                        <p>Visit this famous Kali temple on the banks of Hooghly River.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">11:00 AM</div>
+                    <div class="activity-details">
+                        <h3>Kumartuli</h3>
+                        <p>Explore the potter's colony where divine idols are crafted.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">03:00 PM</div>
+                    <div class="activity-details">
+                        <h3>College Street</h3>
+                        <p>Browse through Asia's largest book market and visit the historic Coffee House.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="day-section">
+            <div class="day-header">
+                <h2>Day 3 - Local Life & Markets</h2>
+            </div>
+            <div class="activity-list">
+                <div class="activity">
+                    <div class="activity-time">07:00 AM</div>
+                    <div class="activity-details">
+                        <h3>Flower Market</h3>
+                        <p>Experience the vibrant Mullick Ghat Flower Market.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">10:00 AM</div>
+                    <div class="activity-details">
+                        <h3>Tram Ride</h3>
+                        <p>Take a heritage tram ride through the old city.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">02:00 PM</div>
+                    <div class="activity-details">
+                        <h3>New Market</h3>
+                        <p>Shop at the historic New Market and try local street food.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="tips-section">
+        <div class="tips-container">
+            <h2>Travel Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Food</h3>
+                    <p>Try Bengali sweets, street food at Park Street, and the famous Kolkata biryani.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-bus"></i>
+                    <h3>Transportation</h3>
+                    <p>Use Metro for quick travel, iconic yellow taxis, and trams for a heritage experience.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>Shopping</h3>
+                    <p>Visit New Market for variety, College Street for books, and Gariahat for sarees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="travel-accommodation-section">
+        <div class="section-container">
+            <h2><i class="fas fa-info-circle"></i> Travel & Accommodation</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4><i class="fas fa-hotel"></i> Recommended Hotels</h4>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fas fa-star"></i>
+                            <div class="info-content">
+                                <h5>Luxury: The Oberoi Grand</h5>
+                                <p>Historic luxury hotel in the heart of the city</p>
+                                <span class="price-range">₹15,000/night</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-star-half-alt"></i>
+                            <div class="info-content">
+                                <h5>Mid-Range: Taj Bengal</h5>
+                                <p>Elegant hotel near Victoria Memorial</p>
+                                <span class="price-range">₹8,000/night</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-heart"></i>
+                            <div class="info-content">
+                                <h5>Budget: The Astor Hotel</h5>
+                                <p>Heritage budget hotel in Park Street area</p>
+                                <span class="price-range">₹3,000/night</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-plane"></i> Travel Information</h4>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fas fa-plane-arrival"></i>
+                            <div class="info-content">
+                                <h5>Nearest Airport</h5>
+                                <p>Netaji Subhas Chandra Bose International Airport (CCU) - 16km from city center</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-train"></i>
+                            <div class="info-content">
+                                <h5>Railway Station</h5>
+                                <p>Howrah Railway Station - Major railway terminus</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-bus"></i>
+                            <div class="info-content">
+                                <h5>Local Transport</h5>
+                                <p>Metro rail, trams, local buses, yellow taxis, and ride-hailing services</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> About Us</h3>
+                <p>AI Travel Planner helps you create the perfect itinerary for your next adventure.</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="itineraries.html">Itineraries</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p>Email: support@aitravelplanner.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AI Travel Planner. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/auth.js"></script>
+    <script src="js/css-check.js"></script>
+    </main>
+</body>
+</html>

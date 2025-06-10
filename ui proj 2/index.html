@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/common.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Planner</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <main>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fas fa-rocket"></i>
+            <span>AI Travel Planner</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="itineraries.html">Itineraries</a>
+            <a href="dashboard.html" id="dashboardLink" class="nav-link" style="display: none; opacity: 0; transition: opacity 0.3s ease;">Dashboard</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn btn-outline">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Next Adventure</h1>
+            <p>Find the perfect destination for your next journey</p>
+            <div class="search-box">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchDestination" placeholder="Search destinations...">
+                </div>
+                <button id="searchBtn" class="btn btn-primary">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </div>
+    </header>
+    <section class="reviews-section">
+        <h2>What Our Travelers Say</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="review-info">
+                        <h4>Sarah Johnson</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p>"Amazing experience! The itinerary was perfect and helped me discover hidden gems I wouldn't have found otherwise."</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="review-info">
+                        <h4>Michael Chen</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <p>"Great platform for planning trips. The recommendations were spot-on and saved me hours of research."</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="review-info">
+                        <h4>Emma Davis</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p>"The best travel planning tool I've used. Made my vacation planning stress-free and enjoyable."</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> About Us</h3>
+                <p>AI Travel Planner helps you create the perfect itinerary for your next adventure.</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="itineraries.html">Itineraries</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p>Email: support@aitravelplanner.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AI Travel Planner. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Global function to check login status
+        window.isUserLoggedIn = function() {
+            return !!localStorage.getItem('userData');
+        };
+    </script>
+    <script src="js/common.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        // Set up search functionality
+        function setupSearch() {
+            const searchBtn = document.getElementById('searchBtn');
+            const searchInput = document.getElementById('searchDestination');
+            // Map of valid cities to their HTML pages
+            const cityPages = {
+                'hyderabad': 'hyderabad.html',
+                'kochi': 'kochi.html',
+                'kolkata': 'kolkata.html'
+            };
+            if (searchBtn && searchInput) {
+                function handleSearch() {
+                    if (!isUserLoggedIn()) {
+                        window.location.href = 'login.html?redirect=index.html';
+                        return;
+                    }
+                    const query = searchInput.value.trim().toLowerCase();
+                    if (query) {
+                        // Check if the searched city exists in our cityPages map
+                        if (cityPages[query]) {
+                            // Redirect to the specific city's page
+                            window.location.href = cityPages[query];
+                        } else {
+                            // Redirect to not-found page for invalid cities
+                            window.location.href = 'not-found.html';
+                        }
+                    }
+                }
+                searchBtn.addEventListener('click', handleSearch);
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        handleSearch();
+                    }
+                });
+            }
+        }
+        // Initialize when the page is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded, setting up page...');
+            setupSearch();
+            // Navigation is handled by common.js
+        });
+        // Fallback in case DOMContentLoaded already fired
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            console.log('Page already loading, setting up now...');
+            setupSearch();
+        }
+    </script>
+</body>
+</html>

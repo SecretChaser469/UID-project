@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Not Found - AI Travel Planner</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .not-found-container {
+            text-align: center;
+            padding: 100px 20px;
+            min-height: calc(100vh - 300px);
+        }
+        .not-found-container h1 {
+            font-size: 3em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .not-found-container p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .not-found-container .btn {
+            margin: 10px;
+        }
+        .suggestions {
+            margin-top: 40px;
+        }
+        .suggestions h2 {
+            color: #444;
+            margin-bottom: 20px;
+        }
+        .city-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .city-list a {
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .city-list a:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-rocket"></i>
+            <span>AI Travel Planner</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="itineraries.html">Itineraries</a>
+            <a href="dashboard.html" id="dashboardLink" style="display: none;">Dashboard</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn btn-outline">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </nav>
+    <div class="not-found-container">
+        <h1>City Not Found</h1>
+        <p>Sorry, we don't have an itinerary for this city yet.</p>
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+        <a href="itineraries.html" class="btn btn-outline">View Available Itineraries</a>
+        <div class="suggestions">
+            <h2>Available Cities</h2>
+            <div class="city-list">
+                <a href="hyderabad.html">Hyderabad</a>
+                <a href="kochi.html">Kochi</a>
+                <a href="kolkata.html">Kolkata</a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> About Us</h3>
+                <p>AI Travel Planner helps you create the perfect itinerary for your next adventure.</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="itineraries.html">Itineraries</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p>Email: support@aitravelplanner.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AI Travel Planner. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+    </main>
+</body>
+</html>

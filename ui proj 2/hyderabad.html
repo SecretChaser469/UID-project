@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyderabad Itinerary - AI Travel Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/city-itinerary.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+        .navbar { background: white; padding: 1rem; }
+        .city-header { min-height: 400px; }
+    </style>
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <main>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-rocket"></i>
+            <span>AI Travel Planner</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="itineraries.html">Itineraries</a>
+            <a href="dashboard.html" id="dashboardLink" style="display: none;">Dashboard</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn btn-outline">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </nav>
+    <header class="city-header" style="background-image: url('hyd.jpeg'); background-color: #2c3e50;">
+        <div class="city-header-content">
+            <h1>Hyderabad</h1>
+            <p>Experience the perfect blend of history, culture, and technology in the City of Pearls</p>
+        </div>
+    </header>
+    <section class="city-overview">
+        <div class="overview-container">
+            <div class="overview-card">
+                <i class="fas fa-clock"></i>
+                <h3>Duration</h3>
+                <p>3 Days</p>
+            </div>
+            <div class="overview-card">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Budget</h3>
+                <p>₹25,000</p>
+            </div>
+            <div class="overview-card">
+                <i class="fas fa-calendar"></i>
+                <h3>Best Time to Visit</h3>
+                <p>October to February</p>
+            </div>
+            <div class="weather-widget">
+                <i class="fas fa-sun weather-icon"></i>
+                <div class="temperature">32°C</div>
+                <div class="weather-details">Sunny, Humidity: 65%</div>
+            </div>
+        </div>
+    </section>
+    <section class="featured-image">
+        <div class="image-container">
+            <img 
+                src="hyd.jpeg" 
+                alt="Charminar - The iconic symbol of Hyderabad" 
+                class="main-image"
+                width="1200"
+                height="800"
+                loading="lazy">
+            <p class="image-caption">The iconic Charminar, built in 1591, stands as the symbol of Hyderabad's rich heritage</p>
+        </div>
+    </section>
+    <main class="itinerary-content">
+        <div class="day-section">
+            <div class="day-header">
+                <h2>Day 1 - Historical Heritage</h2>
+            </div>
+            <div class="activity-list">
+                <div class="activity">
+                    <div class="activity-time">09:00 AM</div>
+                    <div class="activity-details">
+                        <h3>Charminar</h3>
+                        <p>Start your day at the iconic symbol of Hyderabad. Built in 1591, this architectural marvel offers stunning views of the old city.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">11:30 AM</div>
+                    <div class="activity-details">
+                        <h3>Mecca Masjid</h3>
+                        <p>Visit one of India's largest mosques, located just steps away from Charminar.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">01:00 PM</div>
+                    <div class="activity-details">
+                        <h3>Lunch at Paradise</h3>
+                        <p>Enjoy the world-famous Hyderabadi Biryani at Paradise Restaurant.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">03:00 PM</div>
+                    <div class="activity-details">
+                        <h3>Laad Bazaar</h3>
+                        <p>Shop for traditional bangles, pearls, and artifacts in this historic market.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="day-section">
+            <div class="day-header">
+                <h2>Day 2 - Modern Hyderabad</h2>
+            </div>
+            <div class="activity-list">
+                <div class="activity">
+                    <div class="activity-time">10:00 AM</div>
+                    <div class="activity-details">
+                        <h3>Ramoji Film City</h3>
+                        <p>Visit the world's largest film studio complex and enjoy various attractions.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">02:00 PM</div>
+                    <div class="activity-details">
+                        <h3>HITEC City</h3>
+                        <p>Explore the IT hub of Hyderabad and visit modern shopping malls.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">05:00 PM</div>
+                    <div class="activity-details">
+                        <h3>Tank Bund</h3>
+                        <p>Evening walk along the Hussain Sagar Lake and see the Buddha statue.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="day-section">
+            <div class="day-header">
+                <h2>Day 3 - Cultural Experience</h2>
+            </div>
+            <div class="activity-list">
+                <div class="activity">
+                    <div class="activity-time">09:00 AM</div>
+                    <div class="activity-details">
+                        <h3>Golconda Fort</h3>
+                        <p>Explore the majestic fort known for its acoustic effects and architecture.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">02:00 PM</div>
+                    <div class="activity-details">
+                        <h3>Salar Jung Museum</h3>
+                        <p>Visit one of the largest one-man collections of antiques in the world.</p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-time">06:00 PM</div>
+                    <div class="activity-details">
+                        <h3>Night Food Tour</h3>
+                        <p>Experience the famous street food of Hyderabad at Gachibowli.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="tips-section">
+        <div class="tips-container">
+            <h2>Travel Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Food</h3>
+                    <p>Don't miss the authentic Hyderabadi Biryani, Haleem, and Irani Chai.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-bus"></i>
+                    <h3>Transportation</h3>
+                    <p>Use the Metro for convenient travel. Auto-rickshaws are good for short distances.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>Shopping</h3>
+                    <p>Bargain at local markets. Pearls and bangles make great souvenirs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="travel-accommodation-section">
+        <div class="section-container">
+            <h2><i class="fas fa-info-circle"></i> Travel & Accommodation</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4><i class="fas fa-hotel"></i> Recommended Hotels</h4>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fas fa-star"></i>
+                            <div class="info-content">
+                                <h5>Luxury: Taj Falaknuma Palace</h5>
+                                <p>Luxury 5-star heritage palace hotel with stunning city views</p>
+                                <span class="price-range">₹25,000/night</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-star-half-alt"></i>
+                            <div class="info-content">
+                                <h5>Mid-Range: Novotel Hyderabad</h5>
+                                <p>Modern 4-star hotel in the heart of HITEC City</p>
+                                <span class="price-range">₹8,000/night</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-heart"></i>
+                            <div class="info-content">
+                                <h5>Budget: FabHotel Prime</h5>
+                                <p>Clean and comfortable stay near Banjara Hills</p>
+                                <span class="price-range">₹2,500/night</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-plane"></i> Travel Information</h4>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fas fa-plane-arrival"></i>
+                            <div class="info-content">
+                                <h5>Nearest Airport</h5>
+                                <p>Rajiv Gandhi International Airport (HYD) - 30km from city center</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-train"></i>
+                            <div class="info-content">
+                                <h5>Railway Station</h5>
+                                <p>Secunderabad Railway Station - Major railway hub</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-bus"></i>
+                            <div class="info-content">
+                                <h5>Local Transport</h5>
+                                <p>Metro rail, TSRTC buses, auto-rickshaws, and ride-hailing services available</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> About Us</h3>
+                <p>AI Travel Planner helps you create the perfect itinerary for your next adventure.</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="itineraries.html">Itineraries</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p>Email: support@aitravelplanner.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AI Travel Planner. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/auth.js"></script>
+    <script src="js/css-check.js"></script>
+    <script>
+        // Handle image loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const headerImage = document.querySelector('.city-header');
+            const mainImage = document.querySelector('.main-image');
+            // Fallback for header background
+            if (headerImage) {
+                const url = getComputedStyle(headerImage).backgroundImage;
+                if (url === 'none' || url === '') {
+                    headerImage.style.backgroundColor = '#2c3e50';
+                }
+            }
+            // Fallback for main image
+            if (mainImage) {
+                mainImage.onerror = function() {
+                    this.style.display = 'none';
+                    const caption = document.querySelector('.image-caption');
+                    if (caption) {
+                        caption.style.display = 'none';
+                    }
+                };
+            }
+        });
+    </script>
+    </main>
+</body>
+</html>

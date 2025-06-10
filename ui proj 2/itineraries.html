@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Itineraries - AI Travel Planner</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/itineraries.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.location.pathname.includes('itineraries.html') && !isUserLoggedIn()) {
+                window.location.href = 'login.html?redirect=itineraries.html';
+            }
+            document.querySelectorAll('.view-itinerary').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (!isUserLoggedIn()) {
+                        e.preventDefault();
+                        window.location.href = `login.html?redirect=${encodeURIComponent(window.location.pathname)}`;
+                    } else {
+                        const city = this.getAttribute('data-city');
+                        window.location.href = `${city}.html`;
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fas fa-rocket"></i>
+            <span>AI Travel Planner</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="itineraries.html" class="active">Itineraries</a>
+            <a href="dashboard.html" id="dashboardLink">Dashboard</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="auth-buttons">
+        </div>
+    </nav>
+    <section class="itineraries-section">
+        <h2>Popular City Itineraries</h2>
+        <div class="itineraries-grid">
+            <div class="itinerary-card">
+                <div class="itinerary-image" style="background-image: url('hyd.jpeg')"></div>
+                <div class="itinerary-content">
+                    <h3>Hyderabad - The City of Pearls</h3>
+                    <div class="itinerary-details">
+                        <span><i class="fas fa-clock"></i> 3 Days</span>
+                        <span><i class="fas fa-dollar-sign"></i> Budget: ₹25,000</span>
+                    </div>
+                    <div class="day-plan">
+                        <h4>Day 1 - Heritage Tour</h4>
+                        <ul>
+                            <li><i class="fas fa-landmark"></i> Charminar</li>
+                            <li><i class="fas fa-utensils"></i> Hyderabadi Biryani</li>
+                            <li><i class="fas fa-mosque"></i> Mecca Masjid</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary view-itinerary" data-city="hyderabad">View Full Itinerary</button>
+                    <div class="login-prompt" style="display: none;">
+                        <p>Please <a href="login.html">login</a> to view the full itinerary</p>
+                    </div>
+                </div>
+            </div>
+            <div class="itinerary-card">
+                <div class="itinerary-image" style="background-image: url('https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="itinerary-content">
+                    <h3>Kochi - Queen of Arabian Sea</h3>
+                    <div class="itinerary-details">
+                        <span><i class="fas fa-clock"></i> 3 Days</span>
+                        <span><i class="fas fa-dollar-sign"></i> Budget: ₹20,000</span>
+                    </div>
+                    <div class="day-plan">
+                        <h4>Day 1 - Fort Kochi</h4>
+                        <ul>
+                            <li><i class="fas fa-fish"></i> Chinese Fishing Nets</li>
+                            <li><i class="fas fa-church"></i> St. Francis Church</li>
+                            <li><i class="fas fa-store"></i> Jew Town</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary view-itinerary" data-city="kochi">View Full Itinerary</button>
+                    <div class="login-prompt" style="display: none;">
+                        <p>Please <a href="login.html">login</a> to view the full itinerary</p>
+                    </div>
+                </div>
+            </div>
+            <div class="itinerary-card">
+                <div class="itinerary-image" style="background-image: url('https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="itinerary-content">
+                    <h3>Kolkata - City of Joy</h3>
+                    <div class="itinerary-details">
+                        <span><i class="fas fa-clock"></i> 3 Days</span>
+                        <span><i class="fas fa-dollar-sign"></i> Budget: ₹15,000</span>
+                    </div>
+                    <div class="day-plan">
+                        <h4>Day 1 - Heritage Walk</h4>
+                        <ul>
+                            <li><i class="fas fa-landmark"></i> Victoria Memorial</li>
+                            <li><i class="fas fa-utensils"></i> Street Food Tour</li>
+                            <li><i class="fas fa-tram"></i> Tram Ride</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary view-itinerary" data-city="kolkata">View Full Itinerary</button>
+                    <div class="login-prompt" style="display: none;">
+                        <p>Please <a href="login.html">login</a> to view the full itinerary</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> About Us</h3>
+                <p>AI Travel Planner helps you create the perfect itinerary for your next adventure.</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="itineraries.html">Itineraries</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p>Email: support@aitravelplanner.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AI Travel Planner. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/auth.js"></script>
+    <script src="js/itineraries.js"></script>
+    </main>
+</body>
+</html>

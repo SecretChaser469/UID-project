@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/common.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI Travel Planner</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <main>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fas fa-rocket"></i>
+            <span>AI Travel Planner</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="itineraries.html">Itineraries</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="auth-buttons">
+        </div>
+    </nav>
+    <div class="dashboard-container">
+        <section class="dashboard-section profile-section">
+            <h2><i class="fas fa-user-circle"></i> Profile</h2>
+            <div class="profile-info">
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="profile-details">
+                    <h3 id="userName">Loading...</h3>
+                    <p id="userEmail">Loading...</p>
+                </div>
+            </div>
+        </section>
+        <section class="dashboard-section bucket-list-section">
+            <h2><i class="fas fa-list"></i> Bucket List Places</h2>
+            <div class="bucket-list-container">
+                <div class="add-place">
+                    <input type="text" id="newPlace" placeholder="Add a new place...">
+                    <button id="addPlaceBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                </div>
+                <ul id="bucketList" class="bucket-list">
+                </ul>
+            </div>
+        </section>
+        <section class="dashboard-section budget-section">
+            <h2><i class="fas fa-wallet"></i> Travel Budget</h2>
+            <div class="budget-container">
+                <div class="budget-form">
+                    <div class="budget-input-group">
+                        <input type="number" id="budgetAmount" placeholder="Set your budget...">
+                        <button id="setBudgetBtn" class="btn btn-primary">Set Budget</button>
+                    </div>
+                    <div class="budget-input-group">
+                        <input type="number" id="spentInput" placeholder="Add spent amount...">
+                        <button id="addSpentBtn" class="btn btn-primary">Add Spent</button>
+                    </div>
+                </div>
+                <div class="budget-display">
+                    <div class="budget-item">
+                        <span>Total Budget:</span>
+                        <span id="totalBudget">$0</span>
+                    </div>
+                    <div class="budget-item">
+                        <span>Spent:</span>
+                        <span id="spentAmount">$0</span>
+                    </div>
+                    <div class="budget-item">
+                        <span>Remaining:</span>
+                        <span id="remainingAmount">$0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="dashboard-section notes-section">
+            <h2><i class="fas fa-sticky-note"></i> Travel Notes</h2>
+            <div class="notes-container">
+                <div class="add-note">
+                    <textarea id="newNote" placeholder="Add a new note..."></textarea>
+                    <button id="addNoteBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+                <div id="notesList" class="notes-list">
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> About Us</h3>
+                <p>AI Travel Planner helps you create the perfect itinerary for your next adventure.</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="itineraries.html">Itineraries</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p>Email: support@aitravelplanner.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AI Travel Planner. All rights reserved.</p>
+        </div>
+    </footer>
+    </main>
+    <script src="js/common.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
