@@ -1,24 +1,24 @@
-// Global functions that need to be accessible from HTML
+
 window.toggleBucketListItem = toggleBucketListItem;
 window.deleteBucketListItem = deleteBucketListItem;
 window.deleteNote = deleteNote;
-// Logout function
+
 function logout() {
     localStorage.removeItem('userData');
     localStorage.removeItem('authToken');
     window.location.href = 'login.html';
 }
-// Show toast notification
+
 function showToast(message, type = 'info') {
     const toast = document.createElement('div');
     toast.className = `toast toast-${type}`;
     toast.textContent = message;
     document.body.appendChild(toast);
-    // Trigger reflow
+    
     void toast.offsetWidth;
-    // Show toast
+    
     toast.classList.add('show');
-    // Remove toast after delay
+    
     setTimeout(() => {
         toast.classList.remove('show');
         setTimeout(() => {
@@ -28,30 +28,30 @@ function showToast(message, type = 'info') {
         }, 300);
     }, 3000);
 }
-// Initialize the dashboard
+
 document.addEventListener('DOMContentLoaded', () => {
     try {
-        // Check if user is logged in
+        
         const user = JSON.parse(localStorage.getItem('userData'));
         if (!user) {
             window.location.href = 'login.html';
             return;
         }
-        // Set user info in the UI
+        
         document.getElementById('userName').textContent = user.name || 'User';
         document.getElementById('userEmail').textContent = user.email || '';
-        // Initialize dashboard components
+        
         initializeDashboard(user.id);
-        // Set up event listeners
+        
         setupEventListeners(user.id);
     } catch (error) {
         console.error('Error initializing dashboard:', error);
         showToast('Failed to initialize dashboard', 'error');
     }
 });
-// Set up all event listeners
+
 function setupEventListeners(userId) {
-    // Add place functionality
+    
     const addPlaceBtn = document.getElementById('addPlaceBtn');
     const newPlaceInput = document.getElementById('newPlace');
     const editProfileBtn = document.getElementById('editProfileBtn');
@@ -62,14 +62,14 @@ function setupEventListeners(userId) {
     const spentInput = document.getElementById('spentInput');
     const newNoteInput = document.getElementById('newNote');
     const logoutBtn = document.getElementById('logoutBtn');
-    // Add place button and input
+    
     if (addPlaceBtn) {
         addPlaceBtn.addEventListener('click', (e) => {
             e.preventDefault();
             addBucketListItem(userId);
         });
     }
-    // New place input (Enter key)
+    
     if (newPlaceInput) {
         newPlaceInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
@@ -78,14 +78,14 @@ function setupEventListeners(userId) {
             }
         });
     }
-    // Edit profile button
+   
     if (editProfileBtn) {
         editProfileBtn.addEventListener('click', (e) => {
             e.preventDefault();
             openEditProfile();
         });
     }
-    // Set budget button and input
+    
     if (setBudgetBtn) {
         setBudgetBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -100,7 +100,7 @@ function setupEventListeners(userId) {
             }
         });
     }
-    // Add spent button and input
+    
     if (addSpentBtn) {
         addSpentBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -115,7 +115,7 @@ function setupEventListeners(userId) {
             }
         });
     }
-    // Add note button and input
+   
     if (addNoteBtn) {
         addNoteBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -130,7 +130,7 @@ function setupEventListeners(userId) {
             }
         });
     }
-    // Logout button
+    
     if (logoutBtn) {
         logoutBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -167,7 +167,7 @@ function initializeDashboard(userId) {
     const notes = JSON.parse(localStorage.getItem(`notes_${userId}`)) || [];
     displayNotes(notes, userId);
 }
-// Add a new item to the bucket list
+
 function addBucketListItem(userId) {
     console.log('addBucketListItem called with userId:', userId);
     const newPlaceInput = document.getElementById('newPlace');
@@ -181,7 +181,7 @@ function addBucketListItem(userId) {
     if (placeName) {
         const bucketList = JSON.parse(localStorage.getItem(`bucketList_${userId}`)) || [];
         console.log('Current bucket list:', bucketList);
-        // Check if the place already exists
+        
         const exists = bucketList.some(item => 
             item.name.toLowerCase() === placeName.toLowerCase()
         );
@@ -199,7 +199,7 @@ function addBucketListItem(userId) {
         console.log('Adding new item:', newItem);
         bucketList.push(newItem);
         localStorage.setItem(`bucketList_${userId}`, JSON.stringify(bucketList));
-        // Verify the item was added
+        
         const updatedList = JSON.parse(localStorage.getItem(`bucketList_${userId}`)) || [];
         console.log('Updated bucket list:', updatedList);
         displayBucketList(updatedList, userId);
@@ -234,7 +234,7 @@ function displayBucketList(bucketList, userId) {
         console.error('Could not find bucketList element');
         return;
     }
-    // Clear the list
+    
     list.innerHTML = '';
     // Handle empty list
     if (!bucketList || bucketList.length === 0) {
@@ -245,7 +245,7 @@ function displayBucketList(bucketList, userId) {
         list.appendChild(emptyMessage);
         return;
     }
-    // Add each item to the list
+    
     bucketList.forEach(item => {
         try {
             const li = document.createElement('li');
@@ -357,15 +357,15 @@ function deleteNote(id, userId) {
     localStorage.setItem(`notes_${userId}`, JSON.stringify(updatedNotes));
     displayNotes(updatedNotes, userId);
 }
-// Open the edit profile modal
+
 function openEditProfile() {
-    // Get current user data
+    
     const user = JSON.parse(localStorage.getItem('userData'));
-    // Create modal container
+    
     const modal = document.createElement('div');
     modal.className = 'modal';
     modal.style.display = 'flex';
-    // Modal content
+    
     modal.innerHTML = `
         <div class="modal-content">
             <div class="modal-header">
@@ -388,31 +388,31 @@ function openEditProfile() {
             </form>
         </div>
     `;
-    // Add modal to the page
+    
     document.body.appendChild(modal);
     document.body.style.overflow = 'hidden';
-    // Add event listeners
+   
     const closeBtn = modal.querySelector('.close');
     const cancelBtn = modal.querySelector('#cancelEdit');
     const form = modal.querySelector('#profileForm');
-    // Close modal function
+    
     const closeModal = () => {
         document.body.removeChild(modal);
         document.body.style.overflow = 'auto';
     };
     closeBtn.onclick = closeModal;
     cancelBtn.onclick = closeModal;
-    // Handle form submission
+    
     form.onsubmit = (e) => {
         e.preventDefault();
         const newName = document.getElementById('editName').value.trim();
         if (newName) {
-            // Update user data
+            
             user.name = newName;
             localStorage.setItem('userData', JSON.stringify(user));
-            // Update UI
+            
             document.getElementById('userName').textContent = newName;
-            // Show success message
+            
             const toast = document.createElement('div');
             toast.className = 'toast';
             toast.textContent = 'Profile updated successfully!';
@@ -423,36 +423,36 @@ function openEditProfile() {
                     toast.remove();
                 }, 3000);
             }, 100);
-            // Close modal
+           
             closeModal();
         } else {
             alert('Please enter a valid name');
         }
     };
-    // Close modal when clicking outside
+    
     modal.onclick = (e) => {
         if (e.target === modal) closeModal();
     };
 }
-// Update user profile
+
 function updateProfile(user) {
     const newName = document.getElementById('editName').value.trim();
     if (!newName) {
         alert('Please enter a valid name');
         return;
     }
-    // Update user data
+    
     user.name = newName;
     localStorage.setItem('userData', JSON.stringify(user));
-    // Update UI
+    
     document.getElementById('userName').textContent = newName;
     document.getElementById('userGreeting').textContent = `Welcome, ${newName}`;
-    // Close the modal
+    
     closeModal();
-    // Show success message
+   
     alert('Profile updated successfully!');
 }
-// Close modal function
+
 function closeModal() {
     const modal = document.getElementById('profileModal');
     if (modal) {
